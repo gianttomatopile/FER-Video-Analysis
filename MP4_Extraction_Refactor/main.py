@@ -48,6 +48,7 @@ eef.storeData(element=subEmo,directory=img_directory, name=name)
 eef.graphData(subEmo=subEmo)
 
 """
+
 TODO add importance of emotion by portion of screen taken up by face
 TODO john.mateer
 """
