@@ -3,6 +3,25 @@ import json
 import os
 
 def frameByFrameStep(vid_source, dir, name):
+    """
+    Steps through a video frame-by-frame and allows the user to 
+    input their analysis of the dominant emotion 
+    1 = angry
+    2 = disgust
+    3 = fear
+    4 = happy
+    5 = sad
+    6 = surprised
+    7 = netral
+    q = quit
+    space = skip frame
+
+    vid_source = directory for video 
+    dir = directory for where to save data
+    name = name to save the data as
+
+    returns a list of data
+    """
     data = []
 
     cap = cv2.VideoCapture(vid_source)
@@ -74,10 +93,6 @@ def frameByFrameStep(vid_source, dir, name):
 def dataToList(data):
     a_list = [[],[],[],[],[],[],[]]
 
-    # a_list[1].append(2)
-
-    # print(a_list[1])
-
     r = range(1,8)
     for count in range(len(data)):
         for i in r:
@@ -119,3 +134,4 @@ def loadData(directory):
     except:
         print("Failed to load data")
         return None
+

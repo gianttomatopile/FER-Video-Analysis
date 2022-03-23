@@ -1,35 +1,27 @@
 import plottingFunctions as pf
+"""
+Shows the dominant emotions as two datasets
+"""
 
-split_0 = r"C:\Users\Willi\OneDrive\Desktop\Manual_data_analysis\Split_0_data"
-split_1 = r"C:\Users\Willi\OneDrive\Desktop\Manual_data_analysis\Split_1_data"
+#Data directories
+comData = r"C:\Users\Willi\OneDrive\Desktop\Manual_data_analysis\Complete_data"
 
-data_0 = pf.loadData(split_0)
-data_1 = pf.loadData(split_1)
+#Load data
+data_C = pf.loadData(comData)
 
-# print(data_0)
-data_0_segments = pf.getSegments(data_0)
-data_0_values = pf.getSegmentValues(data_0)
+#Create the data segments and their corrisponding values
+data_C_segments = pf.getSegments(data_C)
+data_C_values = pf.getSegmentValues(data_C)
 
-data_1_segments = pf.getSegments(data_1)
-data_1_values = pf.getSegmentValues(data_1)
-
+#With multiple datasets must be added to a list
 segmentLists = []
 segmnetValuesList = []
 
-segmentLists.append(data_0_segments)
-segmnetValuesList.append(data_0_values)
-segmentLists.append(data_1_segments)
-segmnetValuesList.append(data_1_values)
+segmentLists.append(data_C_segments)
+segmnetValuesList.append(data_C_values)
 
-dataNames = ["Data set 0", "Data set 1"]
+#Name for each dataset
+dataNames = ["Complete Data"]
 
-# segmentLists.append(data_0_segments)
-# segmnetValuesList.append(data_0_values)
-
-# dataNames = ["D1", "D2", "D3"]
-
-pf.graph1D(segmentLists, segmnetValuesList, dataNames
-)
-
-# print(segmentLists)
-# print(segmnetValuesList)
+#plot data
+pf.graph1D(segmentLists, segmnetValuesList, dataNames)
